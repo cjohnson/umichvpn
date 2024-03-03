@@ -1,7 +1,12 @@
 #!/bin/sh
 
 show_usage() {
-  echo "Usage: umichvpn <connect/disconnect>"
+  echo "umichvpn - A simple CLI frontend for the University of Michigan VPN."
+  echo ""
+  echo "Usage:"
+  echo "umichvpn connect - Connect to the VPN"
+  echo "umichvpn disconnect - Disconnect from the VPN"
+  echo ""
 }
 
 if [ "$#" -ne 1 ]; then
