@@ -1,8 +1,15 @@
 #!/bin/sh
 
 show_usage() {
-  echo "umichvpn - A simple CLI frontend for the University of Michigan VPN."
-  echo ""
+  echo " ____    ____  |"
+  echo "|_   \  /   _| | umichvpn"
+  echo "  |   \/   |   |"
+  echo "  | |\  /| |   |"
+  echo " _| |_\/_| |_  | A simple CLI frontend for the University of Michigan VPN."
+  echo "|_____||_____| | Go Blue!"
+
+  echo
+
   echo "Usage:"
   echo "umichvpn help			Display the help page."
   echo "umichvpn connect		Connect to the VPN."
