@@ -12,13 +12,26 @@ show_usage() {
   echo ""
 }
 
+# Filename of the install script
+vpn_installer_script=umichvpn_install.sh
+
+# Path at which the installer places the vpn controller executable by default
+vpn_controller_executable=/opt/cisco/anyconnect/bin/vpn
+
+# Check if the VPN is installed
+if [ ! -f $vpn_controller_executable ]; then
+  echo "Error: VPN not installed!" >&2
+  echo >&2
+  echo "VPN Controller Executable not found at path: $vpn_controller_executable" >&2
+  echo "Hint: Have you run the $vpn_installer_script script to install the VPN?" >&2
+
+  exit 1
+fi
+
 if [ "$#" -eq 0 ]; then
   show_usage
   exit 0
 fi
-
-# Path at which the installer places the vpn controller executable by default
-vpn_controller_executable=/opt/cisco/anyconnect/bin/vpn
 
 # The University of Michigan VPN Gateway URL
 vpn_gateway_url=umvpn.umnet.umich.edu
