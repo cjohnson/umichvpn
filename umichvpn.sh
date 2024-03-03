@@ -31,6 +31,7 @@ vpn_profile_all_traffic=umvpn-all-traffic-alt
 # (see the "Notes:" section for information on the VPN profiles and their offerings)
 vpn_profile_only_um_traffic=umvpn-split-tunnel-alt
 
+exit_status=0
 case "$1" in
   connect)
     $vpn_controller_executable connect $vpn_gateway_url/$vpn_profile_only_um_traffic
@@ -46,7 +47,6 @@ case "$1" in
     ;;
   *)
     show_usage
-    exit 0
     ;;
 esac
 
