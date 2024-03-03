@@ -9,3 +9,4 @@ Different OSes/Ubuntu should follow the [University of Michigan ITS's documentat
 
 - `$ ./umichvpn connect` - Connect to the University of Michigan VPN.
 - `$ ./umichvpn disconnect` - Disconnect from the University of Michigan VPN.
+- `$ ./umichvpn status` - Retrieve status of the University of Michigan VPN connection.

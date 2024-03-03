@@ -6,6 +6,7 @@ show_usage() {
   echo "Usage:"
   echo "umichvpn connect - Connect to the VPN"
   echo "umichvpn disconnect - Disconnect from the VPN"
+  echo "umichvpn status - Status of the VPN connection"
   echo ""
 }
 
@@ -21,6 +22,10 @@ case "$1" in
     ;;
   disconnect)
     /opt/cisco/anyconnect/bin/vpn disconnect
+    exit_status=$?
+    ;;
+  status)
+    /opt/cisco/anyconnect/bin/vpn status
     exit_status=$?
     ;;
   *)
