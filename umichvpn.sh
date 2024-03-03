@@ -4,11 +4,11 @@ show_usage() {
   echo "umichvpn - A simple CLI frontend for the University of Michigan VPN."
   echo ""
   echo "Usage:"
-  echo "umichvpn connect		Connect to the VPN"
-  echo "umichvpn disconnect		Disconnect from the VPN"
-  echo "umichvpn [status/state]		Status of the VPN connection"
-  echo "umichvpn [profiles/hosts]	Display the available VPN profiles"
-  echo "umichvpn stats			Display the VPN stats"
+  echo "umichvpn connect		Connect to the VPN."
+  echo "umichvpn disconnect		Disconnect from the VPN."
+  echo "umichvpn [status/state]		Status of the connection."
+  echo "umichvpn [profiles/hosts]	Display the available VPN profiles."
+  echo "umichvpn stats			Display the VPN statistics."
   echo ""
 }
 
