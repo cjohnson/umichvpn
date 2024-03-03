@@ -40,17 +40,36 @@ vpn_gateway_url=umvpn.umnet.umich.edu
 # "UMVPN - All Traffic profile" - Includes Access to the Library Databases
 # https://its.umich.edu/enterprise/wifi-networks/vpn/getting-started
 # (see the "Notes:" section for information on the VPN profiles and their offerings)
+vpn_profile_all_traffic_name="UMVPN - All Traffic"
 vpn_profile_all_traffic=umvpn-all-traffic-alt
 
 # "UMVPN - Only U-M Traffic" - Allows access to most services that require the VPN
 # https://its.umich.edu/enterprise/wifi-networks/vpn/getting-started
 # (see the "Notes:" section for information on the VPN profiles and their offerings)
+vpn_profile_only_um_traffic_name="UMVPN - Only U-M Traffic"
 vpn_profile_only_um_traffic=umvpn-split-tunnel-alt
 
 exit_status=0
 case "$1" in
   connect)
-    $vpn_controller_executable connect $vpn_gateway_url/$vpn_profile_only_um_traffic
+    echo
+    echo "[0] $vpn_profile_only_um_traffic_name"
+    echo "[1] $vpn_profile_all_traffic_name"
+    read -p "Select VPN profile (default=0):" connection_profile_index
+    echo
+
+    if [ -z $connection_profile_index ]; then
+      connection_profile=$vpn_profile_only_um_traffic
+    elif [ $connection_profile_index -eq 0 ]; then
+      connection_profile=$vpn_profile_only_um_traffic
+    elif [ $connection_profile_index -eq 1 ]; then
+      connection_profile=$vpn_profile_all_traffic
+    else
+      echo "Error: Unrecognized profile."
+      exit 1
+    fi
+
+    $vpn_controller_executable connect $vpn_gateway_url/$connection_profile
     exit_status=$?
     ;;
   disconnect)
