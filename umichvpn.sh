@@ -4,6 +4,7 @@ show_usage() {
   echo "umichvpn - A simple CLI frontend for the University of Michigan VPN."
   echo ""
   echo "Usage:"
+  echo "umichvpn help			Display the help page."
   echo "umichvpn connect		Connect to the VPN."
   echo "umichvpn disconnect		Disconnect from the VPN."
   echo "umichvpn [status/state]		Status of the connection."
@@ -68,7 +69,12 @@ case "$1" in
     $vpn_controller_executable stats
     exit_status=$?
     ;;
+  help)
+    show_usage
+    ;;
   *)
+    echo "Error: Unrecognized command: $1"
+    echo
     show_usage
     ;;
 esac

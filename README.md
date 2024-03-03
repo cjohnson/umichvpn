@@ -7,6 +7,7 @@ Different OSes/Ubuntu should follow the [University of Michigan ITS's documentat
 
 ## Usage
 
+- `$ ./umichvpn help` - Display the help page.
 - `$ ./umichvpn connect` - Connect to the VPN.
 - `$ ./umichvpn disconnect` - Disconnect from the VPN.
 - `$ ./umichvpn [status/state]` - Status of the connection.
