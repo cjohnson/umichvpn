@@ -1,6 +1,6 @@
 # umichvpn
 
-A simple CLI for connecting to the University of Michigan VPN.
+A CLI for connecting to the University of Michigan VPN.
 
 UMich ITS Documentation: [University of Michigan ITS's documentation](https://its.umich.edu/enterprise/wifi-networks/vpn/getting-started)
 
