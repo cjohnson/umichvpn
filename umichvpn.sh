@@ -1,22 +1,14 @@
 #!/bin/sh
 
 show_usage() {
-  echo " ____    ____  |"
-  echo "|_   \  /   _| | umichvpn"
-  echo "  |   \/   |   |"
-  echo "  | |\  /| |   |"
-  echo " _| |_\/_| |_  | A simple CLI frontend for the University of Michigan VPN."
-  echo "|_____||_____| | Go Blue!"
-
-  echo
-
-  echo "Usage:"
-  echo "umichvpn help			Display the help page."
-  echo "umichvpn connect		Connect to the VPN."
-  echo "umichvpn disconnect		Disconnect from the VPN."
-  echo "umichvpn [status/state]		Status of the connection."
-  echo "umichvpn [profiles/hosts]	Display the available VPN profiles."
-  echo "umichvpn stats			Display the VPN statistics."
+  echo "umichvpn"
+  echo "--------------------------------------------------------------------"
+  echo "umichvpn help             Display the help page."
+  echo "umichvpn connect          Connect to the VPN."
+  echo "umichvpn disconnect       Disconnect from the VPN."
+  echo "umichvpn [status/state]   Status of the connection."
+  echo "umichvpn [profiles/hosts] Display the available VPN profiles."
+  echo "umichvpn stats            Display the VPN statistics."
   echo ""
 }
 
