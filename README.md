@@ -1,9 +1,8 @@
 # umichvpn
 
-A simple CLI frontend for connecting to and disconnecting from the University of Michigan VPN.
-Assumes client is on a GNU/Linux system.
+A simple CLI for connecting to the University of Michigan VPN.
 
-Different OSes/Ubuntu should follow the [University of Michigan ITS's documentation](https://its.umich.edu/enterprise/wifi-networks/vpn/getting-started) for installation.
+UMich ITS Documentation: [University of Michigan ITS's documentation](https://its.umich.edu/enterprise/wifi-networks/vpn/getting-started)
 
 ## Usage
 
