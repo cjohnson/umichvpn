@@ -9,7 +9,7 @@ UMich ITS Documentation: [University of Michigan ITS's documentation](https://it
 - `$ ./umichvpn help` - Display the help page.
 - `$ ./umichvpn connect` - Connect to the VPN.
 - `$ ./umichvpn disconnect` - Disconnect from the VPN.
-- `$ ./umichvpn [status/state]` - Status of the connection.
-- `$ ./umichvpn [profiles/hosts]` - Display the available VPN profiles.
+- `$ ./umichvpn status` - Status of the connection.
+- `$ ./umichvpn profiles` - Display the available VPN profiles.
 - `$ ./umichvpn stats` - Display the VPN statistics.
 

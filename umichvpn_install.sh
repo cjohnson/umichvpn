@@ -1,29 +1,21 @@
 #!/bin/sh
 
-# Gets the directory name of the script no matter where it is called from.
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-cd $SCRIPT_DIR
+UMICHVPN_ARTIFACT_FILE_NAME=UMVPN-linux.tar.gz
+UMICHVPN_ARTIFACT_URL=https://www.dropbox.com/s/d2zysaq0e2sr6e7/UMVPN-linux.tar.gz?dl=1
+UMICHVPN_ARTIFACTS_DIR=artifacts
 
-mkdir -p artifacts
-cd artifacts
+echo "umichvpn_installer: Creating artifacts directory if it doesn't exist..."
+mkdir -p $UMICHVPN_ARTIFACTS_DIR
+cd $UMICHVPN_ARTIFACTS_DIR
 
-echo "umichvpn_installer: Fetching ITS Archive..."
-echo
+echo "umichvpn_installer: Fetching UMich ITS Archive from Dropbox..."
+curl -L $UMICHVPN_ARTIFACT_URL -o $UMICHVPN_ARTIFACT_FILE_NAME
 
-# -L flag added to follow the dropbox redirect.
-curl -L -o UMVPN-linux.tar.gz https://www.dropbox.com/s/d2zysaq0e2sr6e7/UMVPN-linux.tar.gz?dl=1
-
-echo
 echo "umichvpn_installer: Extracting Tarball..."
-echo
+tar zxvf $UMICHVPN_ARTIFACT_FILE_NAME
 
-tar zxvf UMVPN-linux.tar.gz
+echo "umichvpn_installer: (Requires elevated privileges) Installing VPN..."
+sudo ./anyconnect-linux/vpn/vpn_install.sh
 
-echo
-echo "umichvpn_installer: Installing VPN..."
-echo
+echo "umichvpn_installer: Done!"
 
-cd anyconnect-linux/vpn/
-sudo ./vpn_install.sh
-
-echo

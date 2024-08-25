@@ -6,8 +6,8 @@ show_usage() {
   echo "umichvpn help             Display the help page."
   echo "umichvpn connect          Connect to the VPN."
   echo "umichvpn disconnect       Disconnect from the VPN."
-  echo "umichvpn [status/state]   Status of the connection."
-  echo "umichvpn [profiles/hosts] Display the available VPN profiles."
+  echo "umichvpn status           Status of the connection."
+  echo "umichvpn profiles         Display the available VPN profiles."
   echo "umichvpn stats            Display the VPN statistics."
   echo ""
 }
@@ -75,11 +75,11 @@ case "$1" in
     $vpn_controller_executable disconnect
     exit_status=$?
     ;;
-  status | state)
+  status)
     $vpn_controller_executable status
     exit_status=$?
     ;;
-  profiles | hosts )
+  profiles)
     $vpn_controller_executable hosts
     exit_status=$?
     ;;
